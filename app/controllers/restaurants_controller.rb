@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  before_filter :authenticate, :except => ['index','show']
  
 #  layout 'layout'
 

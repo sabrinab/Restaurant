@@ -3998,3 +3998,520 @@ Rendered restaurants/_restaurant (1.4ms)
 Rendered restaurants/_restaurant (1.4ms)
 Rendered restaurants/_restaurant (1.3ms)
 Completed in 23ms (View: 12, DB: 2) | 200 OK [http://localhost/restaurants]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-22 17:08:21) [GET]
+
+ActionController::RoutingError (No route matches "/posts.atom" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 17:54:36) [GET]
+  [4;36;1mRestaurant Load (1.1ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mRestaurant Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (10.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.6ms)
+Rendered restaurants/_restaurant (1.6ms)
+Completed in 236ms (View: 183, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#new (for 127.0.0.1 at 2009-11-22 17:54:45) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:signed_in_as_an_admin] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://localhost/restaurants/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 17:54:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering sessions/new
+Completed in 38ms (View: 26, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#show (for 127.0.0.1 at 2009-11-22 17:54:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRestaurant Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+  [4;35;1mRestaurant Load (0.7ms)[0m   [0mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 2) [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/show
+Rendered restaurants/_restaurant (3.4ms)
+  [4;36;1mMenu Load (0.7ms)[0m   [0;1mSELECT * FROM `menus` WHERE (`menus`.restaurant_id = 2) [0m
+Completed in 78ms (View: 64, DB: 4) | 200 OK [http://localhost/restaurants/2]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 17:56:23) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 41ms (View: 13, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 17:57:19) [GET]
+  [4;35;1mRestaurant Load (0.4ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.5ms)
+Rendered restaurants/_restaurant (1.6ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+
+ActionView::TemplateError (undefined method `sign_in?' for #<ActionView::Base:0x7f49e50f2720>) on line #8 of app/views/restaurants/index.html.erb:
+5: 
+6: <%= render :partial => @restaurants %>
+7: 
+8: <%= link_to 'New Restaurant', new_restaurant_path if (sign_in?)%>
+
+    app/views/restaurants/index.html.erb:8
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (137.5ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 17:57:34) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.7ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.7ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 28ms (View: 18, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-22 17:57:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+  [4;35;1mUser Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering users/new
+Rendered users/_form (6.1ms)
+Completed in 50ms (View: 27, DB: 4) | 200 OK [http://localhost/sign_up]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-22 17:58:00) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"sabri@gmail.com"}}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sabri@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.8ms)[0m   [0mINSERT INTO `users` (`encrypted_password`, `salt`, `created_at`, `updated_at`, `remember_token`, `confirmation_token`, `email_confirmed`, `email`) VALUES('b20eeb161da97d1f70ddb67082a40ac00e4c4734', '0f40eea753d3e5cbc10846a47dd1eb37b64ee8be', '2009-11-22 22:58:01', '2009-11-22 22:58:01', NULL, 'a221c414a2be7371965be2fa5debd4143dc94da5', 0, 'sabri@gmail.com')[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
+Sent mail to sabri@gmail.com
+
+Date: Sun, 22 Nov 2009 17:58:01 -0500
+From: donotreply@example.com
+To: sabri@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/2/confirmation/new?token=a221c414a2be7371965be2fa5debd4143dc94da5
+Redirected to http://localhost:3000/session/new
+Completed in 613ms (DB: 7) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 17:58:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering sessions/new
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/session/new]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::ConfirmationsController#new (for 127.0.0.1 at 2009-11-22 17:58:16) [GET]
+  Parameters: {"token"=>"[FILTERED]", "action"=>"new", "user_id"=>"2", "controller"=>"clearance/confirmations"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`confirmation_token` = 'a221c414a2be7371965be2fa5debd4143dc94da5' AND `users`.`id` = '2') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`confirmation_token` = 'a221c414a2be7371965be2fa5debd4143dc94da5' AND `users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-11-22 22:58:16', `email_confirmed` = 1, `confirmation_token` = NULL WHERE `id` = 2[0m
+  [4;36;1mSQL (6.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-11-22 22:58:16', `remember_token` = '9ba529efb804fc43294f044d6d1cf7cb58d06e38' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 198ms (DB: 13) | 302 Found [http://localhost/users/2/confirmation/new?token=a221c414a2be7371965be2fa5debd4143dc94da5]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 17:58:16) [GET]
+  [4;36;1mRestaurant Load (0.4ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.8ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '9ba529efb804fc43294f044d6d1cf7cb58d06e38') LIMIT 1[0m
+Completed in 36ms (View: 21, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#new (for 127.0.0.1 at 2009-11-22 17:58:21) [GET]
+  [4;36;1mUser Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '9ba529efb804fc43294f044d6d1cf7cb58d06e38') LIMIT 1[0m
+
+NoMethodError (undefined method `admin' for #<User:0x7f49e51cafa8>):
+  app/controllers/application_controller.rb:13:in `signed_in_as_an_admin'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#new (for 127.0.0.1 at 2009-11-22 18:00:42) [GET]
+  [4;36;1mUser Columns (19.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '9ba529efb804fc43294f044d6d1cf7cb58d06e38') LIMIT 1[0m
+  [4;36;1mRestaurant Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/new
+Completed in 122ms (View: 75, DB: 23) | 200 OK [http://localhost/restaurants/new]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:00:46) [GET]
+  [4;35;1mRestaurant Load (0.6ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (7.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+  [4;35;1mUser Columns (9.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '9ba529efb804fc43294f044d6d1cf7cb58d06e38') LIMIT 1[0m
+Completed in 108ms (View: 20, DB: 15) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:00:49) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.6ms)
+Rendered restaurants/_restaurant (1.6ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '9ba529efb804fc43294f044d6d1cf7cb58d06e38') LIMIT 1[0m
+Completed in 34ms (View: 21, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:09:51) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '9ba529efb804fc43294f044d6d1cf7cb58d06e38') LIMIT 1[0m
+  [4;36;1mRestaurant Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.6ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 40ms (View: 27, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-22 18:09:53) [GET]
+  Parameters: {"method"=>:delete, "action"=>"destroy", "controller"=>"clearance/sessions"}
+Redirected to http://localhost:3000/session/new
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/sign_out]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 18:09:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering sessions/new
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:14:41) [GET]
+  [4;35;1mRestaurant Load (0.4ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.5ms)
+Completed in 24ms (View: 13, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:15:59) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.6ms)
+Rendered restaurants/_restaurant (1.6ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+Completed in 31ms (View: 20, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 18:16:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering sessions/new
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/sign_in]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-22 18:16:48) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"sabri@gmail.com"}, "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'sabri@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-11-22 23:16:48', `remember_token` = '9b9f574d603da4b41d4d95648d6ab264e1ef126b' WHERE `id` = 2[0m
+  [4;35;1mSQL (67.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants/new
+Completed in 92ms (DB: 71) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#new (for 127.0.0.1 at 2009-11-22 18:16:48) [GET]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '9b9f574d603da4b41d4d95648d6ab264e1ef126b') LIMIT 1[0m
+  [4;36;1mRestaurant Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/new
+Completed in 28ms (View: 8, DB: 4) | 200 OK [http://localhost/restaurants/new]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#create (for 127.0.0.1 at 2009-11-22 18:17:08) [POST]
+  Parameters: {"restaurant"=>{"about"=>"asogla", "name_restaurant"=>"holaaaa"}, "commit"=>"Create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00="}
+  [4;35;1mUser Columns (4.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '9b9f574d603da4b41d4d95648d6ab264e1ef126b') LIMIT 1[0m
+  [4;35;1mRestaurant Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRestaurant Create (0.5ms)[0m   [0mINSERT INTO `restaurants` (`created_at`, `updated_at`, `about`, `name_restaurant`) VALUES('2009-11-22 23:17:08', '2009-11-22 23:17:08', 'asogla', 'holaaaa')[0m
+  [4;36;1mSQL (23.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed in 72ms (DB: 31) | 302 Found [http://localhost/restaurants]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:17:08) [GET]
+  [4;35;1mRestaurant Load (0.6ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '9b9f574d603da4b41d4d95648d6ab264e1ef126b') LIMIT 1[0m
+  [4;36;1mRestaurant Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.9ms)
+Rendered restaurants/_restaurant (1.7ms)
+Rendered restaurants/_restaurant (1.6ms)
+Rendered restaurants/_restaurant (2.1ms)
+Rendered restaurants/_restaurant (2.9ms)
+Completed in 40ms (View: 26, DB: 4) | 200 OK [http://localhost/restaurants]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-22 18:17:12) [GET]
+  Parameters: {"method"=>:delete, "action"=>"destroy", "controller"=>"clearance/sessions"}
+Redirected to http://localhost:3000/restaurants
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/sign_out]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:17:12) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.4ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.6ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 26ms (View: 15, DB: 2) | 200 OK [http://localhost/restaurants]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 18:17:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering sessions/new
+Completed in 43ms (View: 31, DB: 1) | 200 OK [http://localhost/sign_in]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-22 18:17:20) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"sabri@gmail.com"}, "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'sabri@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-11-22 23:17:20', `remember_token` = '1f6a6e4510e8ebc6c8b700770f3f4300917bbe75' WHERE `id` = 2[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 28ms (DB: 9) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:17:20) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '1f6a6e4510e8ebc6c8b700770f3f4300917bbe75') LIMIT 1[0m
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.9ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.7ms)
+Rendered restaurants/_restaurant (1.5ms)
+Completed in 38ms (View: 24, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-22 18:17:28) [GET]
+  Parameters: {"method"=>:delete, "action"=>"destroy", "controller"=>"clearance/sessions"}
+Redirected to http://localhost:3000/restaurants
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/sign_out]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:17:28) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.7ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 27ms (View: 16, DB: 2) | 200 OK [http://localhost/restaurants]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#show (for 127.0.0.1 at 2009-11-22 18:17:35) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRestaurant Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+  [4;35;1mRestaurant Load (0.6ms)[0m   [0mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 5) [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/show
+Rendered restaurants/_restaurant (2.8ms)
+  [4;36;1mMenu Load (0.6ms)[0m   [0;1mSELECT * FROM `menus` WHERE (`menus`.restaurant_id = 5) [0m
+Completed in 34ms (View: 19, DB: 4) | 200 OK [http://localhost/restaurants/5]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#show (for 127.0.0.1 at 2009-11-22 18:17:47) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 5) [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/show
+Rendered restaurants/_restaurant (2.6ms)
+  [4;35;1mMenu Load (0.3ms)[0m   [0mSELECT * FROM `menus` WHERE (`menus`.restaurant_id = 5) [0m
+Completed in 33ms (View: 13, DB: 6) | 200 OK [http://localhost/restaurants/5]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:17:48) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 27ms (View: 15, DB: 3) | 200 OK [http://localhost/restaurants]

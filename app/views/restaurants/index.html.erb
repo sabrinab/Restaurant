@@ -1,8 +1,13 @@
-<%= link_to "register", sign_up_path%>
+<% if signed_in?%>
+<%=link_to "Logout",sign_out_path   %>
+<%else%>
+<%=link_to "Login", sign_in_path  %> |
+<%= link_to "Register", sign_up_path%>
+<%  end %>
 
 
 <h1>Listing Restaurants</h1>
 
 <%= render :partial => @restaurants %>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'New Restaurant', new_restaurant_path if (signed_in?)%>

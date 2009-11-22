@@ -1,5 +1,10 @@
 <%= render :partial => @restaurant %>
-<p>
+<% if(signed_in?) %>
+
+   <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+  <%= link_to 'Destroy', @restaurant, :method => :delete, :confirm => "Are you sure?" %> |
+  <% end %>
+  <p>
   <%= link_to 'See All Restaurant', restaurants_path %>
 </p>
 
@@ -9,13 +14,14 @@
   <%= render :partial => @restaurant.menus %>
 </div>
 
-
+   <% if(signed_in?) %>
   <% form_for [@restaurant, Menu.new] do |f| %>
     <p>
       <%= f.label :about, "New menu" %><br />
       <%= f.text_area :about %>
     </p>
     <p><%= f.submit "Add menu" %> </p>
+    <% end %>
   <% end %>
 
 
