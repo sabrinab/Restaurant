@@ -1,0 +1,5 @@
+<h2><%= link_to_unless_current h(restaurant.menu_restaurant), restaurant %></h2>
+<%= simple_format h(restaurant.about) %>
+<%= image_tag post.photo.url(:small) %>
+
+

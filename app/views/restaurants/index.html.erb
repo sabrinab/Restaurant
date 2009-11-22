@@ -1,0 +1,12 @@
+<%= link_to "register", sign_up_path%>
+
+<h1>Restaurants list</h1>
+
+<% @restaurants.each do |restaurant| %>
+  <div>
+    <h2><%=restaurant.name_restaurant%></h2>
+    <p><%=restaurant.about%></p>
+  </div>
+<% end %>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

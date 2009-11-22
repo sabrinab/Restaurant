@@ -1,0 +1,15 @@
+<h1>New Restaurant</h1>
+
+<% form_for (@restaurant) do |form| %>
+  <p>
+    <%= form.label "Name" %><br />
+    <%= form.text_field :name_restaurant %>
+  </p>
+  <p>
+    <%= form.label "About:" %><br />
+    <%= form.text_area :about %>
+  </p>
+  <p>
+    <%= form.submit "Create" %>
+  </p>
+<%end%>
