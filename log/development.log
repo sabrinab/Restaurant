@@ -4515,3 +4515,108 @@ Rendered restaurants/_restaurant (1.5ms)
 Rendered restaurants/_restaurant (1.5ms)
 Rendered restaurants/_restaurant (1.4ms)
 Completed in 27ms (View: 15, DB: 3) | 200 OK [http://localhost/restaurants]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-22 18:23:04) [GET]
+
+ActionController::RoutingError (No route matches "/posts.atom" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#show (for 127.0.0.1 at 2009-11-22 18:24:00) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRestaurant Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 5) [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/show
+Rendered restaurants/_restaurant (3.1ms)
+  [4;36;1mMenu Load (0.5ms)[0m   [0;1mSELECT * FROM `menus` WHERE (`menus`.restaurant_id = 5) [0m
+Completed in 29ms (View: 14, DB: 5) | 200 OK [http://localhost/restaurants/5]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:24:01) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.2ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 44ms (View: 15, DB: 3) | 200 OK [http://localhost/restaurants]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#show (for 127.0.0.1 at 2009-11-22 18:24:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+  [4;36;1mRestaurant Load (0.6ms)[0m   [0;1mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 1) [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/show
+Rendered restaurants/_restaurant (2.5ms)
+  [4;35;1mMenu Load (0.5ms)[0m   [0mSELECT * FROM `menus` WHERE (`menus`.restaurant_id = 1) [0m
+  [4;36;1mMenu Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Rendered menus/_menu (36.9ms)
+Completed in 179ms (View: 165, DB: 5) | 200 OK [http://localhost/restaurants/1]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:24:06) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.6ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.6ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.6ms)
+Completed in 27ms (View: 16, DB: 2) | 200 OK [http://localhost/restaurants]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#show (for 127.0.0.1 at 2009-11-22 18:24:08) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 5) [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/show
+Rendered restaurants/_restaurant (8.4ms)
+  [4;35;1mMenu Load (0.3ms)[0m   [0mSELECT * FROM `menus` WHERE (`menus`.restaurant_id = 5) [0m
+Completed in 68ms (View: 34, DB: 3) | 200 OK [http://localhost/restaurants/5]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 18:24:09) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.5ms)
+Rendered restaurants/_restaurant (1.6ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 26ms (View: 15, DB: 3) | 200 OK [http://localhost/restaurants]
