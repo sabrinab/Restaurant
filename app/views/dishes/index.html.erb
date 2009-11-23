@@ -1,0 +1,22 @@
+<h1>Listing Dishes</h1>
+
+<table>
+  <tr>
+    <th>Dish</th>
+    <th>Body</th>
+  </tr>
+
+<% @dishes.each do |dish| %>
+  <tr>
+    <td><%=h dish.category_id %></td>
+    <td><%=h dish.name %></td>
+    <td><%=h dish.description %></td>
+    <td><%=h dish.price %></td>
+    <td><%= link_to 'Show', dish %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New dish', new_dish_path %>

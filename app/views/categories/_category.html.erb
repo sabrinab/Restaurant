@@ -1,6 +1,1 @@
-<% div_for category do %>
- <p>
-   <%= h(category.name) %>
- <p>
-<% end %>
-
+<h2><%= link_to_unless_current h(category.name), category %></h2>

@@ -1,0 +1,31 @@
+<h1>New dish</h1>
+
+<% form_for(@dish) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.text_field :category_id %>
+  </p>
+  <br />
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+<br />
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <br />
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <br />
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', dishes_path %>

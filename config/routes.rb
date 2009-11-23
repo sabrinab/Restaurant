@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'restaurants', :action => "index"
   map.resources :restaurants, :has_many => :menus
   map.resources :menus, :has_many => :categories
+  map.resources :categories, :has_many => :dishes
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

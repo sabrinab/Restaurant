@@ -1,11 +1,30 @@
-<p>
-  <b>Menu:</b>
-  <%=h @category.menu_id %>
-</p>
+<%= render :partial => @category %>
 
 <p>
-  <b>Body:</b>
-  <%=h @category.name %>
+  <%= link_to 'See All categories', categories_path %>
 </p>
 
-<%= link_to 'Back', categories_path %>
+
+<h2>Dishes</h2>
+<div id="Dishes">
+  <%= render :partial => @category.dishes %>
+</div>
+
+<% if(signed_in?)  %>
+  <% form_for [@category, Dish.new] do |f| %>
+    <p>
+      <br />
+      <%= f.label :name, "Name new dish" %><br />
+      <%= f.text_field :name %>
+
+      <br />
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+      <br />
+
+      <%= f.label :price %><br />
+      <%= f.text_field :price %>
+    </p>
+    <p><%= f.submit "Add Dish" %> </p>
+    <% end %>
+  <% end %>

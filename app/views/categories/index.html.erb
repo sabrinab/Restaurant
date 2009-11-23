@@ -1,20 +1,7 @@
 <h1>Listing Categories</h1>
 
-<table>
-  <tr>
-    <th>Restaurant</th>
-    <th>Body</th>
-  </tr>
-
-<% @categories.each do |category| %>
-  <tr>
-    <td><%=h category.menu_id %></td>
-    <td><%=h category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial => @categories %>
 
 <br />
 
-<%= link_to 'New category', new_category_path %>
+<%= link_to 'New category', new_category_path %> |  <%= link_to 'Menus', menus_path %>

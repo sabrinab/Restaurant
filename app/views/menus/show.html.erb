@@ -1,6 +1,6 @@
 <%= render :partial => @menu %>
 
-  <p>
+<p>
   <%= link_to 'See All menus', menus_path %>
 </p>
 
@@ -10,7 +10,7 @@
   <%= render :partial => @menu.categories %>
 </div>
 
-  
+<% if(signed_in?)  %>
   <% form_for [@menu, Category.new] do |f| %>
     <p>
       <%= f.label :name, "New Category" %><br />
@@ -18,6 +18,7 @@
     </p>
     <p><%= f.submit "Add Category" %> </p>
     <% end %>
-  
+  <% end %>
+
 
 
