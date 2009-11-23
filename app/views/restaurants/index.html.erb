@@ -1,13 +1,17 @@
 <% if signed_in?%>
-<%=link_to "Logout",sign_out_path   %>
+  <%=link_to "Logout",sign_out_path   %>
 <%else%>
-<%=link_to "Login", sign_in_path  %> |
-<%= link_to "Register", sign_up_path%>
+  <%=link_to "Login", sign_in_path  %> |
+  <%= link_to "Register", sign_up_path%>
 <%  end %>
 
 
 <h1>Listing Restaurants</h1>
-
+<% form_tag "/restaurants", :method  => "get" do %>
+  <label>Search:</label>
+  <input type="text" name="[search]"/>
+  <%= submit_tag "search"  %>
+<%end%>
 <%= render :partial => @restaurants %>
 
 <%= link_to 'New Restaurant', new_restaurant_path if (signed_in?)%>

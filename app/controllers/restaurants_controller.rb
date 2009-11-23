@@ -5,6 +5,11 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
+
+    if !params[:search].blank?
+      @restaurants = Restaurant.all :conditions => ["name_restaurant LIKE '#{params[:search]}%%'"]
+   
+    end
   end
 
   def show
