@@ -1,3 +1,9 @@
+<% if(signed_in?) && (current_user == @dish.user) %>
+
+   <%= link_to 'Edit', edit_dish_path(@dish) %> |
+  <%= link_to 'Destroy', @dish, :method => :delete, :confirm => "Are you sure?" %> |
+  <% end %>
+
 <p>
   <b>Dish:</b>
   <%=h @dish.category_id %>

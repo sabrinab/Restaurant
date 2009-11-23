@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
 
-   layout 'application'
+  layout 'application'
 
-   def index
+  def index
     @categories = Category.all
   end
 
@@ -14,10 +14,11 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-   def create
+  def create
     @category=Category.new(params[:category])
     @menu=Menu.find(params[:menu_id])
     @category.menu=@menu
+    
     if @category.save
       redirect_to @menu
     else
@@ -26,7 +27,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-   def edit
+  def edit
 
     @category = Category.find(params[:id])
 
@@ -35,21 +36,22 @@ class CategoriesController < ApplicationController
   def update
 
     @category = Category.find(params[:id])
-
-    if @category.update_attributes(params[:category])
-      flash[:notice] = 'Category was successfully updated.'
-      redirect_to categories_path
-    else
-      render :action => "edit"
-    end
-
+    
+      if @category.update_attributes(params[:category])
+        flash[:notice] = 'Category was successfully updated.'
+        redirect_to categories_path
+      else
+        render :action => "edit"
+      end
+    
   end
 
   def destroy
 
     @category = Category.find(params[:id])
-    @category.destroy
-    redirect_to categories_url
-  end
-
+    
+      @category.destroy
+      redirect_to categories_url
+    end
+   
 end

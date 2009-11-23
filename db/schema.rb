@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091123195451) do
+ActiveRecord::Schema.define(:version => 20091123201407) do
 
   create_table "categories", :force => true do |t|
     t.integer  "menu_id"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(:version => 20091123195451) do
     t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   add_index "dishes", ["category_id"], :name => "fk_dishes_categories"

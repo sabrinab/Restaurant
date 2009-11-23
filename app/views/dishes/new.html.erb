@@ -1,6 +1,6 @@
 <h1>New dish</h1>
 
-<% form_for(@dish) do |f| %>
+<% form_for @dish  do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -22,6 +22,8 @@
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </p>
+  <br />
+  <%= f.file_field :photo %>
   <br />
   <p>
     <%= f.submit 'Create' %>

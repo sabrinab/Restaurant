@@ -11,7 +11,7 @@
 </div>
 
 <% if(signed_in?)  %>
-  <% form_for [@category, Dish.new] do |f| %>
+  <% form_for [@category, Dish.new],:html => { :multipart => true } do |f| %>
     <p>
       <br />
       <%= f.label :name, "Name new dish" %><br />
@@ -25,6 +25,9 @@
       <%= f.label :price %><br />
       <%= f.text_field :price %>
     </p>
+    <br />
+    <%= f.file_field :photo %>
+    <br />
     <p><%= f.submit "Add Dish" %> </p>
-    <% end %>
   <% end %>
+<% end %>

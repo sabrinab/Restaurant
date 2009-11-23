@@ -1,5 +1,9 @@
 <%= render :partial => @menu %>
+<% if(signed_in?)  %>
 
+  <%= link_to 'Destroy', @menu, :method => :delete, :confirm => "Are you sure?" %> |
+  <% end %>
+  <p>
 <p>
   <%= link_to 'See All menus', menus_path %>
 </p>

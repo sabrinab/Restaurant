@@ -1,7 +1,9 @@
 <% div_for dish do %>
+
+<%= image_tag dish.photo.url(:small) %>
   <p>
     <%= h(dish.name) %>
-  <p>
+  </p>
   <p>
     <%=h (dish.description) %>
   </p>

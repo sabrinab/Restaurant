@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-
+  before_filter :authenticate, :except => ['index','show']
   layout 'application'
   
   def index
@@ -17,7 +17,7 @@ class MenusController < ApplicationController
   def create
     @menu=Menu.new(params[:menu])
     @restaurant=Restaurant.find(params[:restaurant_id])
-    @menu.restaurant=@restaurant
+    @menu.restaurant=@restaurant 
     if @menu.save
       redirect_to @restaurant
     else
@@ -34,21 +34,23 @@ class MenusController < ApplicationController
   def update
 
     @menu = Menu.find(params[:id])
-   
-    if @menu.update_attributes(params[:menu])
-      flash[:notice] = 'Menu was successfully updated.'
-      redirect_to menus_path
-    else
-      render :action => "edit"
-    end
+    
+      if @menu.update_attributes(params[:menu])
+        flash[:notice] = 'Menu was successfully updated.'
+        redirect_to menus_path
+      else
+        render :action => "edit"
+      end
     
   end
 
   def destroy
 
     @menu = Menu.find(params[:id])
-    @menu.destroy
-    redirect_to menus_url
+    
+      @menu.destroy
+      redirect_to menus_url
+    
   end
 end
 
