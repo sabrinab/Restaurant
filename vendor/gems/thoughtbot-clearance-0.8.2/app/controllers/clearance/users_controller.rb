@@ -13,6 +13,7 @@ class Clearance::UsersController < ApplicationController
     @user = ::User.new params[:user]
     if @user.save
       ::ClearanceMailer.deliver_confirmation @user
+      @user.confirm_email!
       flash_notice_after_create
       redirect_to(url_after_create)
     else
@@ -25,8 +26,7 @@ class Clearance::UsersController < ApplicationController
   def flash_notice_after_create
     flash[:notice] = translate(:deliver_confirmation,
       :scope   => [:clearance, :controllers, :users],
-      :default => "You will receive an email within the next few minutes. " <<
-                  "It contains instructions for confirming your account.")
+      :default => "User created successfully, please log in. ")
   end
 
   def url_after_create

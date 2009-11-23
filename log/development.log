@@ -4620,3 +4620,604 @@ Rendered restaurants/_restaurant (1.5ms)
 Rendered restaurants/_restaurant (1.4ms)
 Rendered restaurants/_restaurant (1.4ms)
 Completed in 26ms (View: 15, DB: 3) | 200 OK [http://localhost/restaurants]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-22 19:38:04) [GET]
+
+ActionController::RoutingError (No route matches "/posts.atom" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-22 20:00:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering users/new
+Rendered users/_form (4.7ms)
+Completed in 24ms (View: 13, DB: 2) | 200 OK [http://localhost/sign_up]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-22 20:00:25) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"nina@gmail.com"}}
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nina@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `created_at`, `updated_at`, `remember_token`, `confirmation_token`, `email_confirmed`, `email`) VALUES('1996f795be04ba1c971fca806d67df4400898bde', 'aa1a7a99741e0a3b2bc3a71eea1739aa9a78b8da', '2009-11-23 01:00:25', '2009-11-23 01:00:25', NULL, 'f76c8b5df47bd4ed6c7a91fcba75d04465328e0a', 0, 'nina@gmail.com')[0m
+  [4;35;1mSQL (6.1ms)[0m   [0mCOMMIT[0m
+Sent mail to nina@gmail.com
+
+Date: Sun, 22 Nov 2009 20:00:25 -0500
+From: donotreply@example.com
+To: nina@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/3/confirmation/new?token=f76c8b5df47bd4ed6c7a91fcba75d04465328e0a
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-11-23 01:00:25', `email_confirmed` = 1, `confirmation_token` = NULL WHERE `id` = 3[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/session/new
+Completed in 44ms (DB: 10) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 20:00:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering sessions/new
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-22 20:00:36) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"nina@gmail.com"}, "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'nina@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-11-23 01:00:36', `remember_token` = 'c271b74c98a3b2c67a024b9c6651270a4b8af2cc' WHERE `id` = 3[0m
+  [4;35;1mSQL (11.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 35ms (DB: 16) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:00:36) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'c271b74c98a3b2c67a024b9c6651270a4b8af2cc') LIMIT 1[0m
+  [4;35;1mRestaurant Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.3ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 35ms (View: 22, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-22 20:05:48) [GET]
+  Parameters: {"method"=>:delete, "action"=>"destroy", "controller"=>"clearance/sessions"}
+Redirected to http://localhost:3000/restaurants
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/sign_out]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:05:48) [GET]
+  [4;36;1mRestaurant Load (0.5ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/application
+Rendering restaurants/index
+  [4;35;1mRestaurant Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (7.4ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.7ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (2.2ms)
+Completed in 43ms (View: 29, DB: 4) | 200 OK [http://localhost/restaurants]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-22 20:05:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.0ms)
+Completed in 34ms (View: 14, DB: 2) | 200 OK [http://localhost/sign_up]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-22 20:06:37) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"mau@gmail.com"}}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'mau@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `created_at`, `updated_at`, `remember_token`, `confirmation_token`, `email_confirmed`, `email`) VALUES('176dc6487c03f4031dd9294d573a5c8155d1c5f9', 'bf9d7d3821cb2011e4a4bc1148470b843535f9b5', '2009-11-23 01:06:37', '2009-11-23 01:06:37', NULL, '3ab0db0d4d01f159b3ce40706ca2562fb19e072a', 0, 'mau@gmail.com')[0m
+  [4;35;1mSQL (61.7ms)[0m   [0mCOMMIT[0m
+Sent mail to mau@gmail.com
+
+Date: Sun, 22 Nov 2009 20:06:37 -0500
+From: donotreply@example.com
+To: mau@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/4/confirmation/new?token=3ab0db0d4d01f159b3ce40706ca2562fb19e072a
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-11-23 01:06:37', `email_confirmed` = 1, `confirmation_token` = NULL WHERE `id` = 4[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/session/new
+Completed in 107ms (DB: 68) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 20:06:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-22 20:11:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.3ms)
+Completed in 142ms (View: 132, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-22 20:12:01) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"luis@gmail.com"}}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'luis@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`encrypted_password`, `salt`, `created_at`, `updated_at`, `remember_token`, `confirmation_token`, `email_confirmed`, `email`) VALUES('c9c0b0a8fc64cd9e9c7783461932ccf616cf2806', 'f88534e1a7a5ba6b25285a837c0d84964d1cde7e', '2009-11-23 01:12:01', '2009-11-23 01:12:01', NULL, 'c55cad1129f2e3dbee4068c75ee7fa62db6c9421', 0, 'luis@gmail.com')[0m
+  [4;36;1mSQL (36.0ms)[0m   [0;1mCOMMIT[0m
+Sent mail to luis@gmail.com
+
+Date: Sun, 22 Nov 2009 20:12:01 -0500
+From: donotreply@example.com
+To: luis@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/5/confirmation/new?token=c55cad1129f2e3dbee4068c75ee7fa62db6c9421
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-11-23 01:12:01', `email_confirmed` = 1, `confirmation_token` = NULL WHERE `id` = 5[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/session/new
+Completed in 74ms (DB: 41) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 20:12:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-22 20:16:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.7ms)
+Completed in 26ms (View: 14, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-22 20:16:20) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"sof@gmail.com"}}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sof@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO `users` (`encrypted_password`, `salt`, `created_at`, `updated_at`, `remember_token`, `confirmation_token`, `email_confirmed`, `email`) VALUES('02d75c373088b0d828773c47f763234d6c15308f', 'f2a9d815ca14d2be032f85449668e55bc2d0a8ba', '2009-11-23 01:16:20', '2009-11-23 01:16:20', NULL, '25ae160362721d0a8a63d3eceaa2a1f8f1fd9e47', 0, 'sof@gmail.com')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mCOMMIT[0m
+Sent mail to sof@gmail.com
+
+Date: Sun, 22 Nov 2009 20:16:20 -0500
+From: donotreply@example.com
+To: sof@gmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/6/confirmation/new?token=25ae160362721d0a8a63d3eceaa2a1f8f1fd9e47
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-11-23 01:16:20', `email_confirmed` = 1, `confirmation_token` = NULL WHERE `id` = 6[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/session/new
+Completed in 44ms (DB: 13) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 20:16:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-22 20:16:38) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"sof@gmail.com"}, "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Columns (4.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'sof@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-11-23 01:16:38', `remember_token` = 'bc8055e90ded2f885b60fccaecf4dc2927b4a10a' WHERE `id` = 6[0m
+  [4;35;1mSQL (28.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 73ms (DB: 36) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:16:38) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/application
+Rendering restaurants/index
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'bc8055e90ded2f885b60fccaecf4dc2927b4a10a') LIMIT 1[0m
+  [4;35;1mRestaurant Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.7ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 35ms (View: 22, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-22 20:16:43) [GET]
+  Parameters: {"method"=>:delete, "action"=>"destroy", "controller"=>"clearance/sessions"}
+Redirected to http://localhost:3000/restaurants
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/sign_out]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:16:43) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/application
+Rendering restaurants/index
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 28ms (View: 17, DB: 2) | 200 OK [http://localhost/restaurants]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 20:16:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 122ms (View: 119, DB: 1) | 200 OK [http://localhost/sign_in]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-22 20:16:58) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"pedro@gmail.com"}, "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'pedro@gmail.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Completed in 26ms (View: 10, DB: 3) | 401 Unauthorized [http://localhost/session]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-22 20:17:25) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"nina@gmail.com"}, "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'nina@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-11-23 01:17:25', `remember_token` = 'dc95d5ad2dec3c876327c88db4aec7f5bb53cc99' WHERE `id` = 3[0m
+  [4;36;1mSQL (9.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 32ms (DB: 13) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:17:25) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/application
+Rendering restaurants/index
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'dc95d5ad2dec3c876327c88db4aec7f5bb53cc99') LIMIT 1[0m
+  [4;36;1mRestaurant Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.6ms)
+Completed in 35ms (View: 22, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#show (for 127.0.0.1 at 2009-11-22 20:17:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+  [4;36;1mRestaurant Load (0.2ms)[0m   [0;1mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering restaurants/show
+Rendered restaurants/_restaurant (2.5ms)
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'dc95d5ad2dec3c876327c88db4aec7f5bb53cc99') LIMIT 1[0m
+  [4;35;1mMenu Load (0.2ms)[0m   [0mSELECT * FROM `menus` WHERE (`menus`.restaurant_id = 1) [0m
+  [4;36;1mMenu Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+Rendered menus/_menu (0.9ms)
+Completed in 61ms (View: 31, DB: 6) | 200 OK [http://localhost/restaurants/1]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#destroy (for 127.0.0.1 at 2009-11-22 20:17:40) [DELETE]
+  Parameters: {"authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "id"=>"1"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'dc95d5ad2dec3c876327c88db4aec7f5bb53cc99') LIMIT 1[0m
+  [4;35;1mRestaurant Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+  [4;36;1mRestaurant Load (0.2ms)[0m   [0;1mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRestaurant Destroy (0.5ms)[0m   [0;1mDELETE FROM `restaurants` WHERE `id` = 1[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed in 37ms (DB: 18) | 302 Found [http://localhost/restaurants/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:17:40) [GET]
+  [4;36;1mRestaurant Load (0.6ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/application
+Rendering restaurants/index
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'dc95d5ad2dec3c876327c88db4aec7f5bb53cc99') LIMIT 1[0m
+  [4;35;1mRestaurant Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.3ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.3ms)
+Rendered restaurants/_restaurant (1.3ms)
+Completed in 33ms (View: 20, DB: 4) | 200 OK [http://localhost/restaurants]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-22 20:18:09) [GET]
+  Parameters: {"method"=>:delete, "action"=>"destroy", "controller"=>"clearance/sessions"}
+Redirected to http://localhost:3000/restaurants
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/sign_out]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:18:09) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/application
+Rendering restaurants/index
+  [4;35;1mRestaurant Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.2ms)
+Rendered restaurants/_restaurant (1.3ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 46ms (View: 13, DB: 2) | 200 OK [http://localhost/restaurants]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#show (for 127.0.0.1 at 2009-11-22 20:18:14) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mRestaurant Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+  [4;35;1mRestaurant Load (0.5ms)[0m   [0mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 3) [0m
+Rendering template within layouts/application
+Rendering restaurants/show
+Rendered restaurants/_restaurant (2.6ms)
+  [4;36;1mMenu Load (0.5ms)[0m   [0;1mSELECT * FROM `menus` WHERE (`menus`.restaurant_id = 3) [0m
+Completed in 24ms (View: 12, DB: 3) | 200 OK [http://localhost/restaurants/3]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:18:17) [GET]
+  [4;35;1mRestaurant Load (0.3ms)[0m   [0mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/application
+Rendering restaurants/index
+  [4;36;1mRestaurant Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.4ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.5ms)
+Completed in 24ms (View: 13, DB: 2) | 200 OK [http://localhost/restaurants]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#show (for 127.0.0.1 at 2009-11-22 20:18:18) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mRestaurant Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+  [4;36;1mRestaurant Load (0.6ms)[0m   [0;1mSELECT * FROM `restaurants` WHERE (`restaurants`.`id` = 5) [0m
+Rendering template within layouts/application
+Rendering restaurants/show
+Rendered restaurants/_restaurant (2.6ms)
+  [4;35;1mMenu Load (0.3ms)[0m   [0mSELECT * FROM `menus` WHERE (`menus`.restaurant_id = 5) [0m
+Completed in 24ms (View: 12, DB: 3) | 200 OK [http://localhost/restaurants/5]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:19:51) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/application
+Rendering restaurants/index
+  [4;35;1mRestaurant Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.2ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 23ms (View: 13, DB: 2) | 200 OK [http://localhost/restaurants]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-22 20:19:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.8ms)
+Completed in 25ms (View: 14, DB: 2) | 200 OK [http://localhost/sign_up]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-22 20:20:00) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"sabrina@gmail.com"}}
+  [4;35;1mUser Columns (4.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sabrina@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (121.3ms)
+Completed in 171ms (View: 131, DB: 6) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-22 20:20:06) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"sabrina@gmail.com"}}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sabrina@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (15.1ms)
+Completed in 43ms (View: 24, DB: 3) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-22 20:20:07) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"sabrina@gmail.com"}}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sabrina@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (16.4ms)
+Completed in 59ms (View: 27, DB: 3) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-22 20:20:15) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"sabrina@gmail.com"}}
+  [4;35;1mUser Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sabrina@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (10.4ms)
+Completed in 38ms (View: 19, DB: 5) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-22 20:20:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 129ms (View: 10, DB: 1) | 200 OK [http://localhost/sign_in]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-22 20:20:53) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"sabri@gmail.com"}, "action"=>"create", "authenticity_token"=>"YMw5N9b7l7Q7YA6Vg76MR3lbZ9TSgMw1KDKRJ28jH00=", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Columns (4.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'sabri@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-11-23 01:20:53', `remember_token` = '724a561229ccefa01185e518e80daef492284ac0' WHERE `id` = 2[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 60ms (DB: 15) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2009-11-22 20:20:53) [GET]
+  [4;36;1mRestaurant Load (0.3ms)[0m   [0;1mSELECT * FROM `restaurants` [0m
+Rendering template within layouts/application
+Rendering restaurants/index
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '724a561229ccefa01185e518e80daef492284ac0') LIMIT 1[0m
+  [4;35;1mRestaurant Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `restaurants`[0m
+Rendered restaurants/_restaurant (5.2ms)
+Rendered restaurants/_restaurant (1.5ms)
+Rendered restaurants/_restaurant (1.4ms)
+Rendered restaurants/_restaurant (1.4ms)
+Completed in 34ms (View: 20, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RestaurantsController#new (for 127.0.0.1 at 2009-11-22 20:21:00) [GET]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '724a561229ccefa01185e518e80daef492284ac0') LIMIT 1[0m
+  [4;36;1mRestaurant Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `restaurants`[0m
+Rendering template within layouts/application
+Rendering restaurants/new
+Completed in 34ms (View: 8, DB: 4) | 200 OK [http://localhost/restaurants/new]
