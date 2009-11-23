@@ -1,5 +1,5 @@
 <%= render :partial => @restaurant %>
-<% if(signed_in?) %>
+<% if(signed_in?) && (current_user == @restaurant.user) %>
 
    <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
   <%= link_to 'Destroy', @restaurant, :method => :delete, :confirm => "Are you sure?" %> |
@@ -14,7 +14,7 @@
   <%= render :partial => @restaurant.menus %>
 </div>
 
-   <% if(signed_in?) %>
+   <% if(signed_in?) && (current_user == @restaurant.user) %>
   <% form_for [@restaurant, Menu.new] do |f| %>
     <p>
       <%= f.label :about, "New menu" %><br />
