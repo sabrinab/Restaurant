@@ -1,6 +1,2 @@
-<% div_for menu do %>
- <p>
-   <%= h(menu.about) %>
- <p>
-<% end %>
-
+<h2><%= link_to_unless_current h(menu.about), menu %></h2>
+<%#= simple_format h(menu.about) %>

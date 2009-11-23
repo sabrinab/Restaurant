@@ -1,11 +1,23 @@
-<p>
-  <b>Restaurant:</b>
-  <%=h @menu.restaurant_id %>
+<%= render :partial => @menu %>
+
+  <p>
+  <%= link_to 'See All menus', menus_path %>
 </p>
 
-<p>
-  <b>Body:</b>
-  <%=h @menu.about %>
-</p>
 
-<%= link_to 'Back', menus_path %>
+<h2>Categories</h2>
+<div id="Categories">
+  <%= render :partial => @menu.categories %>
+</div>
+
+  
+  <% form_for [@menu, Category.new] do |f| %>
+    <p>
+      <%= f.label :name, "New Category" %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p><%= f.submit "Add Category" %> </p>
+    <% end %>
+  
+
+

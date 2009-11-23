@@ -1,20 +1,10 @@
 <h1>Listing Menus</h1>
 
-<table>
-  <tr>
-    <th>Restaurant</th>
-    <th>Body</th>
-  </tr>
 
-<% @menus.each do |menu| %>
-  <tr>
-    <td><%=h menu.restaurant_id %></td>
-    <td><%=h menu.about %></td>
-    <td><%= link_to 'Show', menu %></td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial => @menus %>
+
+
 
 <br />
 
-<%= link_to 'New menu', new_menu_path %>
+<%= link_to 'New menu', new_menu_path %>  |  <%= link_to 'Restaurants', restaurants_path %>
